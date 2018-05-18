@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.db import migrations, models
 import django.db.models.deletion
 import modelcluster.fields
-import wagtail.wagtailcore.fields
+import wagtail.core.fields
 
 
 class Migration(migrations.Migration):
@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('city', models.CharField(blank=True, max_length=255)),
                 ('country', models.CharField(blank=True, max_length=255)),
                 ('post_code', models.CharField(blank=True, max_length=10)),
-                ('body', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('body', wagtail.core.fields.RichTextField(blank=True)),
                 ('feed_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],
             options={
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
             name='EventIndexPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('intro', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('intro', wagtail.core.fields.RichTextField(blank=True)),
             ],
             options={
                 'abstract': False,
@@ -72,7 +72,7 @@ class Migration(migrations.Migration):
                 ('time_to', models.TimeField(blank=True, null=True, verbose_name='End time')),
                 ('audience', models.CharField(choices=[('public', 'Public'), ('private', 'Private')], max_length=255)),
                 ('location', models.CharField(max_length=255)),
-                ('body', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('body', wagtail.core.fields.RichTextField(blank=True)),
                 ('cost', models.CharField(max_length=255)),
                 ('signup_link', models.URLField(blank=True)),
                 ('feed_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
@@ -152,8 +152,8 @@ class Migration(migrations.Migration):
                 ('to_address', models.CharField(blank=True, help_text='Optional - form submissions will be emailed to this address', max_length=255, verbose_name='to address')),
                 ('from_address', models.CharField(blank=True, max_length=255, verbose_name='from address')),
                 ('subject', models.CharField(blank=True, max_length=255, verbose_name='subject')),
-                ('intro', wagtail.wagtailcore.fields.RichTextField(blank=True)),
-                ('thank_you_text', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('intro', wagtail.core.fields.RichTextField(blank=True)),
+                ('thank_you_text', wagtail.core.fields.RichTextField(blank=True)),
             ],
             options={
                 'abstract': False,
@@ -173,8 +173,8 @@ class Migration(migrations.Migration):
                 ('post_code', models.CharField(blank=True, max_length=10)),
                 ('first_name', models.CharField(max_length=255)),
                 ('last_name', models.CharField(max_length=255)),
-                ('intro', wagtail.wagtailcore.fields.RichTextField(blank=True)),
-                ('biography', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('intro', wagtail.core.fields.RichTextField(blank=True)),
+                ('biography', wagtail.core.fields.RichTextField(blank=True)),
                 ('feed_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
                 ('image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],

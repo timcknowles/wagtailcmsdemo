@@ -6,29 +6,29 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django import forms
 from django.http import HttpResponse
 
-from wagtail.wagtailcore.models import Page, Orderable
-from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, \
+from wagtail.core.models import Page, Orderable
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, \
     InlinePanel, PageChooserPanel, StreamFieldPanel
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 
-from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
-from wagtail.wagtailsnippets.models import register_snippet
-from wagtail.wagtailsearch import index
+from wagtail.documents.edit_handlers import DocumentChooserPanel
+from wagtail.snippets.models import register_snippet
+from wagtail.search import index
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock
-from wagtail.wagtailimages.blocks import ImageChooserBlock
-from wagtail.wagtaildocs.blocks import DocumentChooserBlock
+from wagtail.core.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.documents.blocks import DocumentChooserBlock
 
 from modelcluster.fields import ParentalKey
 from modelcluster.tags import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailembeds.blocks import EmbedBlock
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, FieldRowPanel,MultiFieldPanel, \
+from wagtail.core import blocks
+from wagtail.embeds.blocks import EmbedBlock
+from wagtail.admin.edit_handlers import FieldPanel, FieldRowPanel,MultiFieldPanel, \
     InlinePanel, PageChooserPanel, StreamFieldPanel
 
 # Column background color Choice

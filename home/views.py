@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailsearch.models import Query
+from wagtail.core.models import Page
+from wagtail.search.models import Query
 
 try:
-    from wagtail.contrib.wagtailsearchpromotions.models import SearchPromotion
+    from wagtail.contrib.search_promotions.models import SearchPromotion
 except ImportError:
-    from wagtail.wagtailsearch.models import EditorsPick as SearchPromotion
+    from wagtail.search.models import EditorsPick as SearchPromotion
 
 
 def search(request):

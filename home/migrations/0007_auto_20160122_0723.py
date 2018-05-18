@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.db import migrations, models
 import django.db.models.deletion
 import modelcluster.fields
-import wagtail.wagtailcore.fields
+import wagtail.core.fields
 
 
 class Migration(migrations.Migration):
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
             name='StandardIndexPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('intro', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('intro', wagtail.core.fields.RichTextField(blank=True)),
                 ('feed_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],
             options={
@@ -48,8 +48,8 @@ class Migration(migrations.Migration):
             name='StandardPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('intro', wagtail.wagtailcore.fields.RichTextField(blank=True)),
-                ('body', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('intro', wagtail.core.fields.RichTextField(blank=True)),
+                ('body', wagtail.core.fields.RichTextField(blank=True)),
                 ('feed_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],
             options={
