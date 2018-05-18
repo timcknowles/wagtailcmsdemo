@@ -327,10 +327,10 @@ register_snippet(Advert)
 
 class HomePage(Page):
     body = StreamField(HomeStreamBlock())
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('body'),
         index.SearchField('title'),
-    )
+    ]
 
     class Meta:
         verbose_name = "Homepage"
@@ -396,9 +396,9 @@ class StandardIndexPage(Page):
         related_name='+'
     )
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('intro'),
-    )
+    ]
 
 StandardIndexPage.content_panels = [
     FieldPanel('title', classname="full title"),
@@ -433,10 +433,10 @@ class StandardPage(Page):
         related_name='+'
     )
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),
-    )
+    ]
 
 StandardPage.content_panels = [
     FieldPanel('title', classname="full title"),
@@ -477,12 +477,12 @@ class PersonPage(Page, ContactFields):
         related_name='+'
     )
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('first_name'),
         index.SearchField('last_name'),
         index.SearchField('intro'),
         index.SearchField('biography'),
-    )
+    ]
 
 PersonPage.content_panels = [
     FieldPanel('title', classname="full title"),
@@ -512,9 +512,9 @@ class ContactPage(Page, ContactFields):
         related_name='+'
     )
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('body'),
-    )
+    ]
 
 ContactPage.content_panels = [
     FieldPanel('title', classname="full title"),
@@ -536,9 +536,9 @@ class EventIndexPageRelatedLink(Orderable, RelatedLink):
 class EventIndexPage(Page):
     intro = RichTextField(blank=True)
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('intro'),
-    )
+    ]
 
     @property
     def events(self):
@@ -620,11 +620,11 @@ class EventPage(Page):
         related_name='+'
     )
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('get_audience_display'),
         index.SearchField('location'),
         index.SearchField('body'),
-    )
+    ]
 
     @property
     def event_index(self):
@@ -719,10 +719,10 @@ class BlogPage(Page):
         related_name='+'
     )
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('body'),
         index.SearchField('intro'),
-    )
+    ]
 
     @property
     def blog_index(self):
@@ -754,9 +754,9 @@ class BlogIndexPageRelatedLink(Orderable, RelatedLink):
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('intro'),
-    )
+    ]
 
     @property
     def blogs(self):
