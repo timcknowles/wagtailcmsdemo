@@ -8,7 +8,7 @@ for template_engine in TEMPLATES:
     template_engine['OPTIONS']['debug'] = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c(qefe16js8xm7*kzy#m*sorafo=^c9oe+zi$p4sq+1mwfp+n!'
+SECRET_KEY =  ['99c6f8ef7997f51ccb3cba2757c79bd2faa28c3a7d7f9007']
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
