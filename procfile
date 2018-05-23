@@ -1,1 +1,1 @@
-web: gunicorn wagtailcmsdemo.wsgi --log-file -
+web: gunicorn acoidea.wsgi --log-file -
