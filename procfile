@@ -1,1 +1,1 @@
-web: gunicorn acoidea.wsgi --log-file --
+web: gunicorn acoidea.wsgi --log-file -
