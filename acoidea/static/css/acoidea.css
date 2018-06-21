@@ -28,17 +28,17 @@ body {
 }
 
 .navbar-default .navbar-brand {
-    color: #000;
+    color: white;
 }
 .navbar-default {
-    background-color: #FFFFFF;
+    background-color: #581845;
     border-color: #FFFFFF;
     text-transform: uppercase;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    color: #008EC0;
-    background-color: #FFFFFF;
+    color: white;
+    background-color: white;
 
 }
 

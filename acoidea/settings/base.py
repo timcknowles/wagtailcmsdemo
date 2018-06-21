@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.sitemaps',
     'wagtail.contrib.modeladmin',
     'wagtailmenus',
+    "wagtail.contrib.table_block",
 
     'modelcluster',
     'compressor',

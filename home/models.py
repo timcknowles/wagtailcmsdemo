@@ -31,6 +31,8 @@ from wagtail.embeds.blocks import EmbedBlock
 from wagtail.admin.edit_handlers import FieldPanel, FieldRowPanel,MultiFieldPanel, \
     InlinePanel, PageChooserPanel, StreamFieldPanel
 
+from wagtail.contrib.table_block.blocks import TableBlock
+
 # Column background color Choice
 
 COLOUR_CHOICES = (
@@ -247,6 +249,7 @@ class HomeStreamBlock(StreamBlock):
     three_columns = ThreeColumnBlock()
     embedded_video = EmbedBlock(icon="media")
     google_map = GoogleMapBlock()
+    table = TableBlock()
 
 
 
