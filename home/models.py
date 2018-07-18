@@ -114,13 +114,15 @@ class LinkFields(models.Model):
         'wagtailcore.Page',
         null=True,
         blank=True,
-        related_name='+'
+        related_name='+',
+        on_delete=models.SET_NULL
     )
     link_document = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
         blank=True,
-        related_name='+'
+        related_name='+',
+        on_delete=models.SET_NULL
     )
 
     @property
@@ -301,8 +303,8 @@ class HomePageRelatedLink(Orderable, RelatedLink):
 # Advert Snippet
 
 class AdvertPlacement(models.Model):
-    page = ParentalKey('wagtailcore.Page', related_name='advert_placements')
-    advert = models.ForeignKey('home.Advert', related_name='+')
+    page = ParentalKey('wagtailcore.Page', related_name='advert_placements', on_delete=models.CASCADE)
+    advert = models.ForeignKey('home.Advert', related_name='+',on_delete=models.CASCADE)
 
 
 class Advert(models.Model):
@@ -310,7 +312,8 @@ class Advert(models.Model):
         'wagtailcore.Page',
         related_name='adverts',
         null=True,
-        blank=True
+        blank=True,
+        on_delete=models.SET_NULL
     )
     url = models.URLField(null=True, blank=True)
     text = models.CharField(max_length=255)
@@ -348,10 +351,10 @@ HomePage.content_panels = [
 HomePage.promote_panels = Page.promote_panels
 
 class HomePageCarouselItem():
-    image = models.ForeignKey('wagtailimages.Image')
+    image = models.ForeignKey('wagtailimages.Image', on_delete=models.SET_NULL)
     embed_url = models.URLField("Embed URL", blank=True)
     caption = models.CharField(max_length=255, blank=True)
-    page = ParentalKey('HomePage', related_name='carousel_items')
+    page = ParentalKey('HomePage', related_name='carousel_items', on_delete=models.CASCADE)
 
     panels = [
         ImageChooserPanel('image'),
@@ -811,7 +814,9 @@ class LinkFields(models.Model):
         'wagtailcore.Page',
         null=True,
         blank=True,
-        related_name='+'
+        related_name='+',
+        on_delete=models.SET_NULL
+
     )
 
     @property
