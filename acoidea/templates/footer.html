@@ -1,4 +1,10 @@
+{% load compress %}
+
+{% compress css %}
 {% load home_tags cache compress static wagtailuserbar %}
+{% endcompress %}
+
+
 {% load wagtailcore_tags %}
 {% load crispy_forms_tags %}
 
